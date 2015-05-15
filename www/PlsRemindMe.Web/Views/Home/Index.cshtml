@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<div id="root" class="row-fluid">
+    
+    <div class="span12" style="margin-top: 25px;">
+        <div data-bind="template: { name: plsRemindMe.Templates.Reminders, data: CurrentViewModel }"></div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        (function() {
+            var vm = new plsRemindMe.MainViewModel();
+            var rootDom = $("#root")[0];
+            
+            ko.applyBindingsWithValidation(vm, rootDom, plsRemindMe.Helpers.ValidationConfiguration);
+
+        })();
+    </script>
+
+}
+

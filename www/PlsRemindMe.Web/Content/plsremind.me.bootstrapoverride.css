@@ -1,0 +1,130 @@
+﻿/*@color-nav-background: @color-primary-dark-blue;
+@color-nav-border: @color-primary-offwhite;
+@color-nav-menu-item-active-font: @color-primary-dark-blue;
+@color-nav-menu-item-active-background: @color-primary-offwhite;
+@color-nav-menu-item-active-hover-background: @color-primary-white;*/
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("../Content/images/glyphicons-halflings.png");
+}
+a {
+  color: #263545;
+  text-decoration: none;
+  font-size: 13px;
+}
+a:hover,
+a:focus {
+  color: #263545;
+  text-decoration: none;
+  font-size: 13px;
+}
+.navbar-inverse .navbar-inner {
+  background: #494949;
+  border-color: #d7dadb;
+}
+.navbar-inverse .nav .active > a {
+  color: #d87357;
+  background-color: #d7dadb;
+}
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus {
+  color: #d87357;
+  background-color: #ffffff;
+}
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: #d7dadb;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .brand:focus,
+.navbar-inverse .nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: #d7dadb;
+  color: #263545;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: white;
+  background-color: #263545;
+}
+.dropdown-menu {
+  background-color: #d7dadb;
+}
+.datepicker-dropdown:after {
+  border-bottom: 6px solid #d7dadb;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: #263545;
+  background-color: #d7dadb;
+  background-image: none;
+  /*background-image: -moz-linear-gradient(top, #18bc9c, @color-nav-menu-item-active-background);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#18bc9c), to(@color-nav-menu-item-active-background));
+  background-image: -webkit-linear-gradient(top, #18bc9c, @color-nav-menu-item-active-background);
+  background-image: -o-linear-gradient(top, #18bc9c, @color-nav-menu-item-active-background);
+  background-image: linear-gradient(to bottom, #18bc9c, @color-nav-menu-item-active-background);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff18bc9c', endColorstr='#ff15a589', GradientType=0);*/
+
+}
+.popover {
+  background-color: #d7dadb;
+}
+.popover-title {
+  background-color: #d7dadb;
+  border-bottom: 1px solid #ffffff;
+}
+/*.popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}*/
+.popover.top .arrow:after {
+  border-top-color: #d7dadb;
+}
+.popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover.right .arrow:after {
+  border-right-color: #d7dadb;
+}
+.popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.popover.bottom .arrow:after {
+  border-bottom-color: #d7dadb;
+}
+.popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.popover.left .arrow:after {
+  border-left-color: #d7dadb;
+}

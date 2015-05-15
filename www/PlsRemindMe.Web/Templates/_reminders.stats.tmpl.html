@@ -1,0 +1,21 @@
+﻿<div class="prm-stats-wrapper">
+    <div class="prm-section-header-wrapper prm-marBottom20">
+        <div class="prm-section-header-content">
+            <div class="pull-left">
+                <!--<h3 class="prm-mar0">Stats:</h3>-->
+            </div>            
+        </div>
+        <!--<div class="prm-section-separator"></div>-->
+    </div>
+    <div>
+        <ul class="nav nav-pills nav-stacked" data-bind="foreach: Stats">
+            <li data-bind="css: {active: Selected}, click: $parent.selectReminderStat.bind($parent, $data)" >
+                <a href="#" style="height: 15px;">
+                    <div style="float: left" data-bind="text: Name"></div>
+                    <div class="prm-padRight10" style="float: right" data-bind="text: Count, css: { badge: Selected }"></div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>

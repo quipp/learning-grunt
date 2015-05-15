@@ -1,0 +1,477 @@
+﻿@import url('plsremind.me.variables.less');
+@import url('plsremind.me.createreminder.less');
+@import url('plsremind.me.reminderstats.less');
+@import url('plsremind.me.common.less');
+
+html, body {
+    height: 100%;
+    background-color: #f6f6f6;
+}
+
+#wrap{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px; 
+      
+    > .container-fluid{
+        padding-top: 60px;
+    }
+      
+    > .container{
+        padding-top: 60px;
+    }
+}
+
+#footer{
+    height: 60px;
+    background-color: @color-footer-background;
+
+    > .container{
+        text-align: center;
+        height: 100%;
+    }
+}
+
+#push{
+    height: 60px;
+    
+}
+
+.no-wrap {   
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.prm-normal-priority-indicator {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px; 
+    background: #638F9A;
+}
+
+.prm-high-priority-indicator {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px; 
+    background: #E1AEA5;
+}
+
+.prm-urgent-priority-indicator {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px; 
+    background: #D87357;
+}
+
+.prm-onfire-priority-indicator {
+    background-image: @image-fire;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-left: -2px;
+}
+
+.prm-link-show-clickable {
+    border-bottom: 1px dotted @color-link-show-clickable;
+}
+
+
+.prm-link-show-clickable:hover,
+.prm-link-show-clickable:focus {
+    border-bottom: 1px none @color-link-show-clickable;
+}
+
+.prm-inline-field-validation-error{
+     border: 1px solid red !important;
+}
+
+.prm-section-header-wrapper{
+    height: 40px;
+    width: 100%;
+    .prm-section-header-content{
+        float: left;
+        width: 100%;
+        margin-left: 5px;
+    }
+}
+
+.prm-section-separator{   
+    width: 100%; 
+    margin-left: 5px; 
+    height: 2px; 
+    border-bottom: 2px solid @color-primary-offwhite;
+    float: left;
+}
+
+.prm-row-item {
+    border-left: 2px solid transparent;    
+}
+
+.prm-row-item:hover{
+    border-left: 2px solid @color-primary-dark-blue;
+    //background: @color-primary-offwhite;
+    opacity: .85;
+}
+
+.prm-reminder-separator{   
+    width: 100%; 
+    margin-left: 5px; 
+    height: 1px; 
+    border-bottom: 1px solid @color-primary-offwhite;
+    float: left;
+}
+
+.prm-reminders-wrapper{
+    /*border-left: 1px solid @color-primary-dark-blue;
+    padding-left: 2px;*/
+    
+
+    .prm-reminder-item-wrapper{
+        height: 55px;
+        margin-bottom: 5px;
+        //border-bottom: 1px solid @color-primary-dark-blue;        
+    }
+    
+    .prm-reminder-item{      
+        height: 50px;
+        width: 100%;
+        padding: 0;
+
+        .prm-reminder-item-icons-colum {
+            float: left; 
+            width: 20px; 
+            height: 100%; 
+            margin-right: 5px; 
+        }
+
+        .prm-reminder-item-content-colum {
+            float: left; 
+            width: 670px;
+            height: 100%;
+        }
+
+        .prm-reminder-item-content-colum-no-icons {
+            float: left; 
+            //width: 75%; 
+            width: 695px;
+            height: 100%;
+        }
+
+        .prm-reminder-item-action-colum {
+            float: right; 
+            width: 20%; 
+            height: 100%;
+        }
+
+
+        .prm-reminder-content-line{
+            //width: 80%; 
+            width: 100%;
+            height: 25px; 
+            float: left;
+        }
+
+        .prm-reminder-action-section{
+            width: 20%; 
+            height: 100%; 
+            float: right;
+
+            .prm-reminder-status-section{
+                //width: 60px;
+                float: right;
+                padding-top: 5px;
+            }
+        }
+                      
+        h4{
+            font-size: @font-size-item-header;
+            line-height: @font-size-item-header;
+            padding-top: 5px;
+            margin: 0px;
+        }
+
+        h5{
+            font-weight: normal;
+            font-size: @font-size-item-sub-header;
+            line-height: @font-size-item-sub-header;
+            margin: 5px 0;
+        }
+    }
+}
+
+.prm-reminders-wrapper-POC {
+
+    .prm-reminder-header-wrapper {
+        height: 50px;
+        border-bottom: 1px solid @color-border-color-dark;
+
+        .prm-reminder-header-item {
+            float: left;
+            height: 32px;
+            text-align: center;
+            width: 135px;
+            padding-top: 15px;
+            color: @color-header-text-color;
+            border-bottom: 4px none @color-border-color-dark;
+            cursor: pointer;
+
+            .prm-title-text {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .prm-count-text {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+
+            .prm-reminder-header-item:hover,
+            .prm-reminder-header-item:focus {
+                color: @color-focus-font-color;
+                border-bottom: 4px solid @color-border-color-focus;
+            }
+
+        .prm-selected {
+            color: @color-selected-font-color;
+            font-weight: bold;
+            border-bottom: 4px solid @color-border-color-dark;
+        }
+    }
+
+    .prm-reminder-quick-add-wrapper {
+        border: 1px solid @color-border-color-light;
+        height: 50px;
+        border-radius: 4px;
+
+        .prm-reminder-quick-add-item {
+            cursor: pointer;
+            height: 49px;
+            color: @color-header-text-color;
+        }
+
+            .prm-reminder-quick-add-item:hover,
+            .prm-reminder-quick-add-item:focus {
+                color: @color-focus-font-color;
+                background-color: white;
+                border-radius: 4px;
+            }
+
+        .prm-reminder-quick-add-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 55px;
+            margin-top: 5px;
+        }
+
+        .prm-reminder-quick-add-text {
+            text-align: center;
+        }
+    }
+
+    .prm-reminder-quick-filter-wrapper {
+        height: 525px;
+        margin-top: 15px;
+        //border-radius: 4px 4px 0 0 ;
+        border-left: 1px solid @color-border-color-light;
+        border-right: 1px solid @color-border-color-light;
+        border-top: 1px solid @color-border-color-light;
+
+
+        .prm-reminder-quick-filter-item {
+            cursor: pointer;
+            height: 74px;
+            color: @color-header-text-color;
+            border-bottom: 1px solid @color-border-color-light;
+        }
+
+            .prm-reminder-quick-filter-item:hover,
+            .prm-reminder-quick-filter-item:focus {
+                background-color: white;
+                color: @color-focus-font-color;
+            }
+
+        .prm-reminder-quick-filter-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 55px;
+            margin-top: 15px;
+        }
+
+        .prm-reminder-quick-filter-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .prm-selected {
+            background-color: white;
+            color: @color-selected-font-color;
+        }
+    }
+
+    .prm-reminder-upcoming-wrapper {
+        margin-top: 15px;
+
+        .prm-title-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .prm-no-results-found {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: @color-no-results-found-color;
+        }
+
+        .prm-no-reminders-exist {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: @color-no-results-found-color;
+        }
+
+        @prm-reminder-upcoming-item-container-height: 65px;
+
+        .prm-reminder-upcoming-item-container {
+            height: @prm-reminder-upcoming-item-container-height;
+            background-color: white;
+            border-left: 1px solid @color-border-color-light;
+            border-right: 1px solid @color-border-color-light;
+
+            .prm-reminder-upcoming-item-border {
+                border-bottom: 1px solid @color-border-color-light;
+            }
+        }
+
+            .prm-reminder-upcoming-item-container:focus,
+            .prm-reminder-upcoming-item-container:hover {
+                background-color: #f6f6f6;
+                color: #d87357;
+            }
+
+            .prm-reminder-upcoming-item-container:first-child {
+                border-top: 1px solid @color-border-color-light;
+                border-radius: 4px 4px 0 0;
+            }
+
+            .prm-reminder-upcoming-item-container:last-child {
+                border-bottom: 1px solid @color-border-color-light;
+                border-radius: 0 0 4px 4px;
+            }
+
+        .prm-reminder-upcoming-item-vert-spacer {
+            height: @prm-reminder-upcoming-item-container-height - 1;
+            width: 1px;
+        }
+
+        .prm-reminder-upcoming-item-status-container {
+            width: 10px;
+            //height: @prm-reminder-upcoming-item-container-height - 1;
+            //max-height: @prm-reminder-upcoming-item-container-height - 1;
+            margin-left: -7px;
+            margin-top: 25px;
+        }
+
+        .prm-reminder-upcoming-item-container-left-1 {
+            width: 375px;
+            margin-left: 15px;
+            height: @prm-reminder-upcoming-item-container-height - 1;
+        }
+
+        .prm-reminder-upcoming-item-container-left-2 {
+            width: 300px;
+            margin-left: 10px;
+            height: @prm-reminder-upcoming-item-container-height - 1;
+        }
+
+        .prm-reminder-upcoming-item-container-left-3 {
+            width: 145px;
+            margin-left: 10px;
+            height: @prm-reminder-upcoming-item-container-height - 1;
+
+            .prm-user-wapper{
+                cursor: pointer;
+                margin: 5px;
+            }
+            .prm-user-wapper:first-child{
+                margin-left: 0px;
+            }
+        }
+
+        .prm-reminder-upcoming-item-container-right-1 {
+            float: right;
+            margin-left: 10px;
+            margin-right: 10px;
+            height: @prm-reminder-upcoming-item-container-height - 1;
+
+            .prm-reminder-action-button {
+                width: 36px;
+                height: 36px;
+                background-image: url(images/play.png);
+                -moz-background-size: 34px 34px;
+                -o-background-size: 34px 34px;
+                -webkit-background-size: 34px 34px;
+                background-size: 34px 34px;
+                background-repeat: no-repeat;
+                margin-top: 17px;
+                cursor: pointer;
+            }
+
+            .prm-reminder-action-button:hover,
+            .prm-reminder-action-button:focus {                
+                background-image: url(images/play_hover.png);
+            }
+        }
+
+        @prm-tool-width: 20px;
+        .prm-reminder-upcoming-item-container-right-tools {
+            float: right;
+            margin-left: 5px;
+            margin-right: 1px;
+            margin-top: 2px;
+            height: (@prm-reminder-upcoming-item-container-height - 6);
+            width: @prm-tool-width;
+
+            .prm-tool-wrapper {
+                cursor: pointer;
+                width: @prm-tool-width;
+            }
+          
+        }
+    }
+}
+
+.prm-notification{
+    text-align: left;
+    margin: 15px 0;
+    display: none;
+
+    h4{
+        margin: 0px;
+        color: @color-primary-light-blue;
+    }
+}
+
+.prm-image-fire {   
+    background-image: @image-fire;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.prm-reminder-overdue {
+    background-color: @color-overdue-reminder;
+}

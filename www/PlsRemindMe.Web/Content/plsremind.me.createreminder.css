@@ -1,0 +1,53 @@
+﻿/*@color-nav-background: @color-primary-dark-blue;
+@color-nav-border: @color-primary-offwhite;
+@color-nav-menu-item-active-font: @color-primary-dark-blue;
+@color-nav-menu-item-active-background: @color-primary-offwhite;
+@color-nav-menu-item-active-hover-background: @color-primary-white;*/
+.prm-reminder-add-dialogWrapper {
+  width: 650px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row {
+  min-height: 32px;
+  margin-bottom: 5px;
+  width: 100%;
+  float: left;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .prm-edit-label {
+  float: left;
+  width: 125px;
+  padding-top: 7px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .prm-edit-input {
+  width: 300px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .prm-edit-textarea {
+  height: 40px;
+  width: 425px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .prm-edit-action-button {
+  width: 24px;
+  cursor: pointer;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .prm-edit-other-reminders {
+  width: 397px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .alert {
+  padding: 4px 35px 4px 10px;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .alert-info {
+  background-color: #d7dadb;
+  border-color: transparent;
+  color: #494949;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .badge {
+  cursor: pointer;
+}
+.prm-reminder-add-dialogWrapper .prm-edit-row .btn-small {
+  padding: 2px 5px;
+}

@@ -1,0 +1,126 @@
+﻿
+<div class="prm-reminders-wrapper" >
+    <div class="prm-section-header-wrapper prm-marBottom20">
+        <div class="prm-section-header-content">
+            <div class="pull-left">
+                <h3 class="prm-mar0">Upcoming Reminders:</h3>    
+            </div>
+            <div class="pull-right prm-marTop5">
+                <button class="btn btn-mini btn-primary" type="button" data-bind="click: newReminder">New Reminder</button>
+            </div>
+        </div>
+        <div class="prm-section-separator"></div>
+    </div>
+    
+    <div data-bind="foreach: Reminders" >
+        <div class="prm-reminder-item-wrapper">
+            <div class="prm-row-item prm-padLeft5" style="width: 100%;">
+                <div class="prm-reminder-item" >
+                    <div class="prm-reminder-item-icons-colum " data-bind="visible: Priority() == plsRemindMe.ReminderPriorityTypes.HairsOnFire">
+                        <div class="prm-image-fire"></div>
+                    </div>
+                    <div class="prm-reminder-item-content-colum" data-bind="css: { 'prm-reminder-item-content-colum-no-icons': Priority() != plsRemindMe.ReminderPriorityTypes.HairsOnFire }">
+                        <div class="prm-reminder-content-line">
+                            <div style="width: 450px; float: left;">
+                                <h4 class="no-wrap" data-bind="text: Title"></h4>
+                            </div>
+                            <div style="width: 200px; text-align: left; float: right">
+                                <h5 class="muted" style="float: left; margin-right: 3px; width: 100px;">Date:</h5> 
+                                <a class="prm-link-show-clickable" style="float: left" data-bind="click: $parent.showDatePicker, asFormattedDateText: Date">01/01/2014</a>
+                            </div>
+                        </div>
+                        <div class="prm-reminder-content-line">
+                            <div style="width: 450px; float: left;"><small class="no-wrap" data-bind="text: Description"></small></div>    
+                            <div style="width: 200px; text-align: left; float: right">
+                                <h5 class="muted pull-left" style="width: 100px;">Remind Me:</h5> <h5 class="pull-left" data-bind="text: FrequencyName"></h5>
+                            </div>                 
+                        </div>
+                    </div>
+                    <div class="prm-reminder-item-action-colum">
+                        <div class="prm-reminder-action-section">
+                            <div class="prm-reminder-status-section">                    
+                                <button class="btn btn-mini" type="button" style="width: 85px;" data-bind="text: StatusName">Pending</button>
+                            </div>
+                    
+                        </div>
+                    </div>         
+                </div>                
+            </div>
+            
+            <div class="prm-reminder-separator"></div>
+        </div>
+    </div>
+    <div>
+        <div id="prm-remindersPaginator">
+          
+        </div>        
+    </div>
+</div>
+
+<script type="text/html" id="reminderDialogHtml">
+    
+    <div class="prm-reminder-add-dialogWrapper modal hide fade" role="dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">New Reminder</h3>
+        </div>
+        <div class="modal-body" style="margin-left: 25px; padding-bottom: 50px;" >
+            <div id="newReminderErrorAlert" class="prm-notification alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error!</strong>&nbsp;<spam data-bind="text: ErrorMessage"></spam>
+            </div>
+            <div data-bind="with: Reminder()">
+                <div class="prm-edit-row">
+                    <span class="prm-edit-label">Title</span>
+                    <input class="prm-edit-input" type="text" placeholder="Reminder Title" data-bind="value: Title, valueUpdate: 'afterkeydown'"/>
+                </div>
+                <div class="prm-edit-row" style="height: 55px;">
+                    <span class="prm-edit-label">Description</span>
+                    <textarea class="prm-edit-textarea" placeholder="Reminder Description" data-bind="value: Description, valueUpdate: 'afterkeydown'"></textarea>
+                </div>
+                <div class="prm-edit-row">
+                    <span class="prm-edit-label">Date/Time</span>                    
+                    <div style="width: 100%;">
+                        <div style="float: left">
+                            <input type="text" class="prm-edit-input dueDatePicker" style="width: 100px;" placeholder="MM/DD/YYYY" data-bind="value: Date, valueUpdate: 'afterkeydown'"/>
+                        </div>
+                        <div class="input-append bootstrap-timepicker prm-marLeft10" style="float: left">
+                            <input type="text" class="prm-edit-input dueTimePicker" style="width: 100px; float: left" placeholder="00:00 AM/PM" data-bind="value: Time, valueUpdate: 'afterkeydown '"/>
+                            <span style="float: left; float: left; width: 16px; padding: 4px 5px;" class="add-on"><i class="icon-time"></i></span>
+                        </div>
+                        <div class="prm-marLeft10" style="float: left; height: 30px; width: 100px; margin-top: 7px">
+                            <input type="checkbox" style="float: left"/>
+                            <div class="prm-marLeft5" style="float: left; margin-top: 1px">All Day</div>
+                        </div>
+                        
+                    </div>                    
+                </div>
+                <div class="prm-edit-row">
+                    <span class="prm-edit-label">Frequency</span>
+                    <div class="btn-group" data-bind="foreach: $parent.ReminderFrequencies">
+                        <button class="btn btn-small" style="width: 75px;" data-bind="click: $root.selectFrequency.bind($root, $data), text: Name, css: { 'btn-primary': Selected }">[name]</button>
+                    </div>
+                </div>
+                <div class="prm-edit-row">
+                    <span class="prm-edit-label">Priority</span>
+                    <div class="btn-group" data-bind="foreach: $parent.ReminderPriorities">
+                        <button class="btn btn-small" style="width: 75px;" data-bind="click: $root.selectPriority.bind($root, $data), text: Name, css: { 'btn-primary': Selected }">[name]</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary" data-bind="click: saveReminder, enable: Reminder().isValid(), valueUpdate: 'afterkeydown'">Save Reminder</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="reminderDateHtml">
+    <div style="width: 350px;">
+        here
+    </div>
+</script>
+
