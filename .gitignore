@@ -49,3 +49,5 @@ obj/
 Obj/
 *.suo
 *.csproj.user
+
+_output/

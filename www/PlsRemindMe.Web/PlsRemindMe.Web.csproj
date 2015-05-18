@@ -453,10 +453,6 @@
     <Content Include="js\ViewModels\_baseViewModel.js">
       <DependentUpon>_baseViewModel.ts</DependentUpon>
     </Content>
-    <Content Include="js\_output\plsRemindeMe.binders.min.js" />
-    <Content Include="js\_output\plsRemindeMe.common.min.js" />
-    <Content Include="js\_output\plsRemindeMe.models.min.js" />
-    <Content Include="js\_output\plsRemindeMe.viewModels.min.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-paginator.js" />
     <Content Include="Scripts\bootstrap-paginator.min.js" />
@@ -647,6 +643,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="js\_output\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
